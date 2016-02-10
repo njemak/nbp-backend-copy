@@ -1,0 +1,54 @@
+{
+  "name": "admin",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "cp_name": {
+      "type": "string",
+      "required": true
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "updatedAt": {
+      "type": "date"
+    },
+    "role": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "hasServices": {
+      "type": "hasMany",
+      "model": "services",
+      "foreignKey": "cp_admin"
+    },
+    "getAllRevenue": {
+      "type": "hasMany",
+      "model": "revenue",
+      "foreignKey": "cp_admin"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

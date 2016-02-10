@@ -1,0 +1,41 @@
+{
+  "name": "service_subscribed",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "MSISDN": {
+      "type": "string",
+      "id": false,
+      "required": true
+    },
+    "service_id": {
+      "type": "string",
+      "required": true
+    },
+    "date_subscribed": {
+      "type": "date",
+      "required": true
+    },
+    "date_unsuscribed": {
+      "type": "date"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "date_subscribed_finished_time_based": {
+      "type": "date"
+    },
+    "hit_subscribed_finished_hit_based": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

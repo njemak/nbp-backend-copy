@@ -1,0 +1,13 @@
+applications:
+- path: ./NBP-BACKEND
+  command: node .
+  memory: 1024M
+  instances: 2
+  domain: mybluemix.net
+  name: nbp-backend
+  host: nbp-backend
+  disk_quota: 1024M
+  services:
+  - Cloudant NoSQL DB-nm
+  env:
+    BLUEMIX_APP_MGMT_ENABLE: devconsole+shell+inspector

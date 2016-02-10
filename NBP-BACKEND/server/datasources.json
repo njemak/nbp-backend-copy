@@ -1,0 +1,36 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "cloudant": {
+    "host": "9da6bf11-3f98-4964-95cd-c6b822c73bb6-bluemix.cloudant.com",
+    "port": 443,
+    "name": "cloudant",
+    "connector": "couch",
+    "db": "nbp-backend",
+    "protocol": "https",
+    "auth": {
+      "admin": {
+        "username": "9da6bf11-3f98-4964-95cd-c6b822c73bb6-bluemix",
+        "password": "83e91c51f1d53bb3fa2e1c7c6173c88325d0d0ed4a70c6859afba9540b77d649"
+      },
+      "reader": {
+        "username": "9da6bf11-3f98-4964-95cd-c6b822c73bb6-bluemix",
+        "password": "83e91c51f1d53bb3fa2e1c7c6173c88325d0d0ed4a70c6859afba9540b77d649"
+      },
+      "writer": {
+        "username": "9da6bf11-3f98-4964-95cd-c6b822c73bb6-bluemix",
+        "password": "83e91c51f1d53bb3fa2e1c7c6173c88325d0d0ed4a70c6859afba9540b77d649"
+      }
+    }
+  },
+  "mydbcloudant": {
+    "url": "https://9da6bf11-3f98-4964-95cd-c6b822c73bb6-bluemix:83e91c51f1d53bb3fa2e1c7c6173c88325d0d0ed4a70c6859afba9540b77d649@9da6bf11-3f98-4964-95cd-c6b822c73bb6-bluemix.cloudant.com",
+    "database": "nbp-backend-v2",
+    "username": "9da6bf11-3f98-4964-95cd-c6b822c73bb6-bluemix",
+    "password": "83e91c51f1d53bb3fa2e1c7c6173c88325d0d0ed4a70c6859afba9540b77d649",
+    "name": "mydbcloudant",
+    "connector": "cloudant"
+  }
+}

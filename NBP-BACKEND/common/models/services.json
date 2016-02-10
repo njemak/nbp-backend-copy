@@ -1,0 +1,98 @@
+{
+  "name": "services",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "MSISDN": {
+      "type": "object",
+      "required": false
+    },
+    "cp_admin": {
+      "type": "string",
+      "required": false
+    },
+    "createdAt": {
+      "type": "date",
+      "required": false
+    },
+    "hitlimit": {
+      "type": "number",
+      "required": false
+    },
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "keyword": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "services": {
+      "type": "string",
+      "required": true
+    },
+    "sub_period_day": {
+      "type": "number"
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": false
+    },
+    "sub_based": {
+      "type": "string"
+    },
+    "cod_content_date": {
+      "type": "string"
+    },
+    "cod_content": {
+      "type": "string"
+    },
+    "sub_period_hit": {
+      "type": "number"
+    },
+    "index_push": {
+      "type": "number"
+    },
+    "index_add": {
+      "type": "number",
+      "required": false
+    },
+    "nexthit": {
+      "type": "date"
+    },
+    "hitlimittime": {
+      "type": "number"
+    },
+    "hitlimittimetype": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "hasContents": {
+      "type": "hasMany",
+      "model": "content",
+      "foreignKey": "service_id"
+    },
+    "hasReports": {
+      "type": "hasMany",
+      "model": "report",
+      "foreignKey": "service_id"
+    },
+    "hasRevenues": {
+      "type": "hasMany",
+      "model": "revenue",
+      "foreignKey": "service_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

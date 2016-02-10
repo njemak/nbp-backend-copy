@@ -1,0 +1,61 @@
+{
+  "name": "MSISDN",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "government_issued_id": {
+      "type": "string",
+      "required": true
+    },
+    "birthplace": {
+      "type": "string",
+      "required": true
+    },
+    "birthdate": {
+      "type": "date",
+      "required": true
+    },
+    "addresss": {
+      "type": "string",
+      "required": true
+    },
+    "sex": {
+      "type": "string",
+      "required": true
+    },
+    "position_latlong": {
+      "type": "object"
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": false
+    },
+    "createdAt": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "hasManySubscription": {
+      "type": "hasMany",
+      "model": "service_subscribed",
+      "foreignKey": "MSISDN"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

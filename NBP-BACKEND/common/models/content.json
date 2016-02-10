@@ -1,0 +1,45 @@
+{
+  "name": "content",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "service_id": {
+      "type": "string",
+      "required": true
+    },
+    "index": {
+      "type": "number",
+      "required": true
+    },
+    "date_created": {
+      "type": "date",
+      "required": true
+    },
+    "date_push": {
+      "type": "date",
+      "required": true
+    },
+    "push_status": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "belongsToService": {
+      "type": "belongsTo",
+      "model": "services",
+      "foreignKey": "service_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

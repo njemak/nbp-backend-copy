@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "admin": {
+    "dataSource": "cloudant",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "content": {
+    "dataSource": "cloudant",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "scheduler": {
+    "dataSource": null,
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "services": {
+    "dataSource": "cloudant",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "request_subscribe": {
+    "dataSource": "cloudant",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "service_subscribed": {
+    "dataSource": "cloudant",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "MSISDN": {
+    "dataSource": "cloudant",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "revenue": {
+    "dataSource": "cloudant",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "report": {
+    "dataSource": "cloudant",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  }
+}
