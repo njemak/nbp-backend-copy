@@ -1,4 +1,33 @@
 module.exports = function(Services) {
+
+Services.disableRemoteMethod("create", true);
+Services.disableRemoteMethod("upsert", true);
+Services.disableRemoteMethod("updateAll", true);
+Services.disableRemoteMethod("updateAttributes", false);
+ 
+Services.disableRemoteMethod("find", true);
+Services.disableRemoteMethod("findById", true);
+Services.disableRemoteMethod("findOne", true);
+ 
+Services.disableRemoteMethod("deleteById", true);
+ 
+Services.disableRemoteMethod("confirm", true);
+Services.disableRemoteMethod("count", true);
+Services.disableRemoteMethod("exists", true);
+Services.disableRemoteMethod("resetPassword", true);
+Services.disableRemoteMethod("getRequest", true);
+Services.disableRemoteMethod("getContentCOD", true);
+Services.disableRemoteMethod("deleteServiceandContent", true);
+Services.disableRemoteMethod("createService", true);
+Services.disableRemoteMethod("createChangeStream", true);
+ 
+Services.disableRemoteMethod('__count__accessTokens', false);
+Services.disableRemoteMethod('__create__accessTokens', false);
+Services.disableRemoteMethod('__delete__accessTokens', false);
+Services.disableRemoteMethod('__destroyById__accessTokens', false);
+Services.disableRemoteMethod('__findById__accessTokens', false);
+Services.disableRemoteMethod('__get__accessTokens', false);
+Services.disableRemoteMethod('__updateById__accessTokens', false);
 	
 	Services.observe('before save', function updateTimestamp(context, next) {
 
@@ -46,18 +75,14 @@ module.exports = function(Services) {
 		}
 		});
 
-	
-
-
-
-
-
 Services.addContentSub = function(id, content,  cb) {
 		Services.findById(id,{fields: ['id','services','index_add','hitlimit','hitlimittime','hitlimittimetype','nexthit']}, function (err, instance) {  
 
-		if (instance.services == "Subscription")	{
 
-
+			if (instance == undefined){
+				cb(null,"No Service Found")
+			}else{
+				if (instance.services == "Subscription")	{
 
 		//To change next hit in Service	
 		var limithit = instance.hitlimit
@@ -111,6 +136,8 @@ Services.addContentSub = function(id, content,  cb) {
 	}else{
 		cb(null,"This is content on demand services")
 	}
+			}
+
 		});
 
 }
@@ -122,7 +149,8 @@ Services.addContentSub = function(id, content,  cb) {
 	                {arg: 'id', type: 'string', required: true, http: { source: 'query' } },
 	                {arg: 'content', type: 'string', required: true, http: { source: 'query' } }
 	      ],
-	      returns: {name: 'result', args: 'response', type: 'string'}
+	      returns: {name: 'result', args: 'response', type: 'string'},
+
 	    }
 	);
 
@@ -191,20 +219,16 @@ Services.addContentSub = function(id, content,  cb) {
 	);
 
 
-
-
-
-
-
-
-
-
-
-
 	Services.addContentCOD = function(id, content, cb) {
 		//Initialize a REST client in a single line:
 		
 		Services.findById(id,{fields: ['id','services']}, function (err, instance) {  
+
+
+			if (instance == undefined){
+				cb(null,"No services found")
+			}else{
+
 
 		if(instance.services == "ContentOnDemand"){
 
@@ -219,6 +243,7 @@ Services.addContentSub = function(id, content,  cb) {
 		}else{
 			cb(null,"This is subscribtion services")
 		}	
+			}
 			});
 		}
 		

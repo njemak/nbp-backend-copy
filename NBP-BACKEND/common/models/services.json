@@ -77,21 +77,6 @@
   },
   "validations": [],
   "relations": {
-    "hasContents": {
-      "type": "hasMany",
-      "model": "content",
-      "foreignKey": "service_id"
-    },
-    "hasReports": {
-      "type": "hasMany",
-      "model": "report",
-      "foreignKey": "service_id"
-    },
-    "hasRevenues": {
-      "type": "hasMany",
-      "model": "revenue",
-      "foreignKey": "service_id"
-    }
   },
   "acls": [],
   "methods": {}
